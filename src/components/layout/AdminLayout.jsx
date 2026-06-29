@@ -21,7 +21,7 @@ export default function AdminLayout() {
     <div className="min-h-screen bg-stone-50 text-slate-900">
       <Sidebar items={items} title="Admin Panel" subtitle="Admin Menu" />
       <main className="ml-[280px] min-h-screen p-6 lg:p-8">
-        <header className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        {/* <header className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-slate-500">
               Admin dashboard
@@ -34,7 +34,7 @@ export default function AdminLayout() {
               Signed in as {user?.name || "Admin"} ({user?.role || "admin"}).
             </p>
           </div>
-        </header>
+        </header> */}
         <Outlet />
       </main>
     </div>

@@ -5,6 +5,7 @@ import cartReducer from "./slices/cartSlice";
 import orderReducer from "./slices/orderSlice";
 import uiReducer from "./slices/uiSlice";
 import userReducer from "./slices/userSlice";
+import notificationReducer from "./slices/notificationSlice";
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     order: orderReducer,
     ui: uiReducer,
     user: userReducer,
+    notification: notificationReducer,
   },
 });
 

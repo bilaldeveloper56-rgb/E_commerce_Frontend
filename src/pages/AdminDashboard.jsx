@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/slices/authSlice";
 import toast from "react-hot-toast";
+import NotificationBell from "../components/NotificationBell";
 
 export default function AdminDashboard() {
   const dispatch = useDispatch();
@@ -19,11 +20,11 @@ export default function AdminDashboard() {
               Welcome back, {user?.name || "Admin"}
             </h1>
             <p className="mt-2 text-slate-400">
-              View live analytics, manage products, and keep the platform
-              running smoothly.
+              View live analytics, manage products, and keep the platform running smoothly.
             </p>
           </div>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            <NotificationBell variant="light" />
             <Link
               to="/admin/products"
               className="cursor-pointer inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-105 transition-all duration-300"

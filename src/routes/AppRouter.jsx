@@ -25,7 +25,7 @@ function HomeRedirect() {
     return <Navigate to="/login" replace />;
   }
 
-  return <Navigate to={user?.role === "admin" ? "/login" : "/login"} replace />;
+  return <Navigate to={user?.role === "admin" ? "/admin" : "/dashboard"} replace />;
 }
 
 export default function AppRouter() {

@@ -52,11 +52,11 @@ export default function AdminProfile() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-800/80 bg-slate-900/80 p-6 shadow-xl shadow-slate-950/30">
+      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/50">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <h1 className="text-3xl font-semibold text-white">Admin profile</h1>
-            <p className="mt-2 text-slate-400">
+            <h1 className="text-3xl font-semibold text-slate-900">Admin profile</h1>
+            <p className="mt-2 text-slate-500">
               Manage your administrator account information and settings.
             </p>
           </div>
@@ -73,26 +73,26 @@ export default function AdminProfile() {
       </div>
 
       {isEditing ? (
-        <div className="rounded-3xl border border-slate-800/80 bg-slate-900/80 p-6 shadow-xl shadow-slate-950/30">
-          <h2 className="text-2xl font-semibold text-white">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/50">
+          <h2 className="text-2xl font-semibold text-slate-900">
             Edit admin profile
           </h2>
           <form onSubmit={handleSubmit} className="mt-6 space-y-6">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label className="text-sm font-medium text-slate-300">
+                <label className="text-sm font-medium text-slate-700">
                   Full name
                 </label>
                 <input
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  className="mt-3 w-full rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 placeholder-slate-600 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/50"
+                  className="mt-3 w-full rounded-2xl border border-slate-200 bg-stone-50 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/20"
                   required
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-slate-300">
+                <label className="text-sm font-medium text-slate-700">
                   Email address
                 </label>
                 <input
@@ -100,7 +100,7 @@ export default function AdminProfile() {
                   type="email"
                   value={form.email}
                   onChange={handleChange}
-                  className="mt-3 w-full rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-slate-100 placeholder-slate-600 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/50"
+                  className="mt-3 w-full rounded-2xl border border-slate-200 bg-stone-50 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500/20"
                   required
                 />
               </div>
@@ -117,7 +117,7 @@ export default function AdminProfile() {
               <button
                 type="button"
                 onClick={() => setIsEditing(false)}
-                className="inline-flex items-center justify-center rounded-2xl border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-800 transition"
+                className="inline-flex items-center justify-center rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition"
               >
                 Cancel
               </button>
@@ -132,25 +132,25 @@ export default function AdminProfile() {
         </div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-3xl border border-slate-800/80 bg-slate-900/80 p-6 shadow-xl shadow-slate-950/30">
-            <h2 className="text-lg font-semibold text-white">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/50">
+            <h2 className="text-lg font-semibold text-slate-900">
               Personal information
             </h2>
             <div className="mt-6 space-y-5">
               <div>
-                <p className="text-sm text-slate-400">Full name</p>
-                <p className="mt-2 text-lg text-white font-medium">
+                <p className="text-sm text-slate-500">Full name</p>
+                <p className="mt-2 text-lg text-slate-900 font-medium">
                   {displayUser?.name || "Not provided"}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-slate-400">Email address</p>
-                <p className="mt-2 text-lg text-white font-medium">
+                <p className="text-sm text-slate-500">Email address</p>
+                <p className="mt-2 text-lg text-slate-900 font-medium">
                   {displayUser?.email || "Not provided"}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-slate-400">Administrator level</p>
+                <p className="text-sm text-slate-500">Administrator level</p>
                 <p className="mt-2 inline-flex items-center rounded-full bg-amber-500/20 px-3 py-1 text-sm font-medium text-amber-300">
                   ⭐ Full access
                 </p>
@@ -158,14 +158,14 @@ export default function AdminProfile() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-slate-800/80 bg-slate-900/80 p-6 shadow-xl shadow-slate-950/30">
-            <h2 className="text-lg font-semibold text-white">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/50">
+            <h2 className="text-lg font-semibold text-slate-900">
               Account details
             </h2>
             <div className="mt-6 space-y-5">
               <div>
-                <p className="text-sm text-slate-400">Admin since</p>
-                <p className="mt-2 text-lg text-white font-medium">
+                <p className="text-sm text-slate-500">Admin since</p>
+                <p className="mt-2 text-lg text-slate-900 font-medium">
                   {displayUser?.createdAt
                     ? new Date(displayUser.createdAt).toLocaleDateString(
                         undefined,
@@ -179,13 +179,13 @@ export default function AdminProfile() {
                 </p>
               </div>
               <div>
-                <p className="text-sm text-slate-400">Administrator ID</p>
-                <p className="mt-2 font-mono text-sm text-slate-300 break-all">
+                <p className="text-sm text-slate-500">Administrator ID</p>
+                <p className="mt-2 font-mono text-sm text-slate-600 break-all">
                   {displayUser?._id || "—"}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-slate-400">Account status</p>
+                <p className="text-sm text-slate-500">Account status</p>
                 <p className="mt-2 inline-flex items-center rounded-full bg-emerald-500/20 px-3 py-1 text-sm font-medium text-emerald-300">
                   ✓ Active
                 </p>
