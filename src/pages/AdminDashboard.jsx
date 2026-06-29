@@ -23,11 +23,13 @@ export default function AdminDashboard() {
               View live analytics, manage products, and keep the platform running smoothly.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-4">
-            <NotificationBell variant="light" />
+          <div className="flex flex-row items-center gap-2 sm:gap-4 overflow-x-auto w-full md:w-auto py-1">
+            <div className="shrink-0">
+              <NotificationBell variant="light" />
+            </div>
             <Link
               to="/admin/products"
-              className="cursor-pointer inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-105 transition-all duration-300"
+              className="cursor-pointer shrink-0 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-105 transition-all duration-300"
             >
               Manage products
             </Link>
@@ -36,7 +38,7 @@ export default function AdminDashboard() {
                 dispatch(logout());
                 toast.success("Logged out successfully");
               }}
-              className="cursor-pointer inline-flex items-center justify-center rounded-full border border-slate-200 bg-white backdrop-blur-md px-6 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 transition-all duration-300"
+              className="cursor-pointer shrink-0 inline-flex items-center justify-center rounded-full border border-slate-200 bg-white backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 transition-all duration-300"
             >
               Logout
             </button>

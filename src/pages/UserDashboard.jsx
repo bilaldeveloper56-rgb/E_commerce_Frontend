@@ -25,11 +25,13 @@ export default function UserDashboard() {
               Browse your account and available products.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-4">
-            <NotificationBell variant="light" />
+          <div className="flex flex-row items-center gap-2 sm:gap-4 overflow-x-auto w-full md:w-auto py-1">
+            <div className="shrink-0">
+              <NotificationBell variant="light" />
+            </div>
             <Link
               to="/dashboard/orders"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:scale-105 transition-all duration-300"
+              className="cursor-pointer shrink-0 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:scale-105 transition-all duration-300"
             >
               View orders
             </Link>
@@ -38,7 +40,7 @@ export default function UserDashboard() {
                 dispatch(logout());
                 toast.success("Logged out successfully");
               }}
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white backdrop-blur-md px-6 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 transition-all duration-300"
+              className="cursor-pointer shrink-0 inline-flex items-center justify-center rounded-full border border-slate-200 bg-white backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 transition-all duration-300"
             >
               Logout
             </button>

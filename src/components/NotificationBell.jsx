@@ -184,7 +184,7 @@ export default function NotificationBell({ variant = "light" }) {
         <div
           ref={panelRef}
           id="notification-panel"
-          className={`absolute right-0 z-50 mt-3 w-80 sm:w-96 rounded-3xl shadow-2xl overflow-hidden
+          className={`fixed top-20 left-4 right-4 sm:absolute sm:top-auto sm:right-0 sm:left-auto sm:w-96 sm:mt-3 z-50 rounded-3xl shadow-2xl overflow-hidden
             border transition-all duration-200 origin-top-right
             ${
               isLight
