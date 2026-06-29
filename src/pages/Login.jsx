@@ -117,12 +117,12 @@ export default function Login() {
                 >
                   Password
                 </label>
-                <a
-                  href="#forgot"
+                <Link
+                  to="/forgot-password"
                   className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
                 >
                   Forgot Password?
-                </a>
+                </Link>
               </div>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500 group-focus-within:text-indigo-400 transition-colors">

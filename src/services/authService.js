@@ -25,12 +25,24 @@ export const updateProfileApi = async (profileData) => {
   return response.data;
 };
 
+export const forgotPasswordApi = async (email) => {
+  const response = await axiosInstance.post("/auth/forgot-password", { email });
+  return response.data;
+};
+
+export const resetPasswordApi = async (token, newPassword) => {
+  const response = await axiosInstance.post(`/auth/reset-password/${token}`, { newPassword });
+  return response.data;
+};
+
 const authService = {
   login: loginUserApi,
   signup: signupUserApi,
   getMe: getMeApi,
   getProfile: getProfileApi,
   updateProfile: updateProfileApi,
+  forgotPassword: forgotPasswordApi,
+  resetPassword: resetPasswordApi,
 };
 
 export default authService;

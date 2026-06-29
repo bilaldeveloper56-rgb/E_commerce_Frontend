@@ -17,6 +17,8 @@ import UserProducts from "../pages/UserProducts.jsx";
 import UserProfile from "../pages/UserProfile.jsx";
 import UserOrders from "../pages/UserOrders.jsx";
 import UserSettings from "../pages/UserSettings.jsx";
+import ForgotPassword from "../pages/ForgotPassword.jsx";
+import ResetPassword from "../pages/ResetPassword.jsx";
 
 function HomeRedirect() {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
@@ -34,6 +36,8 @@ export default function AppRouter() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password/:token" element={<ResetPassword />} />
         <Route path="/" element={<HomeRedirect />} />
 
         <Route element={<ProtectedRoute />}>

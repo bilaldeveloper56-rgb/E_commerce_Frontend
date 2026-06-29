@@ -13,7 +13,7 @@ export default function UserDashboard() {
     <div className="min-h-screen bg-stone-50 text-slate-900 p-6">
       <p></p>
               <div className="max-w-6xl mx-auto space-y-6">
-        <header className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <header className="flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-sm uppercase tracking-[0.2em] bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent font-bold">
               User Dashboard
