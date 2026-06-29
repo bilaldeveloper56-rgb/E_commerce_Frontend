@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL || "http://localhost:5000/api",
+  baseURL:
+    import.meta.env.VITE_BASE_URL ||
+    "https://e-commerce-backened-six.vercel.app/api",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
@@ -19,7 +21,7 @@ axiosInstance.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
-  }
+  },
 );
 
 // Response interceptor for global error formatting and auth session handling
@@ -36,20 +38,20 @@ axiosInstance.interceptors.response.use(
         window.dispatchEvent(new Event("auth-unauthorized"));
       }
     }
-    
+
     // Normalize error message for easier usage across thunks
-    const message = 
-      error.response?.data?.message || 
-      error.response?.data?.error || 
-      error.message || 
+    const message =
+      error.response?.data?.message ||
+      error.response?.data?.error ||
+      error.message ||
       "An unexpected error occurred.";
-      
+
     const parsedError = new Error(message);
     parsedError.response = error.response;
     parsedError.status = error.response?.status;
-    
+
     return Promise.reject(parsedError);
-  }
+  },
 );
 
 export default axiosInstance;
